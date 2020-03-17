@@ -14,10 +14,8 @@ class AdvisorsApi extends AbstractAdvisorsApi
         // $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // changes for heroku
-        $app->get('/db/', function() use($app) {
-            $this->pdo = $app['pdo'];
-        }
-
+        $dbopts = parse_url(getenv('DATABASE_URL'));
+        echo $dbopts;
     }
 
     public function getUser($request, $response, $args)
