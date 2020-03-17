@@ -16,7 +16,22 @@ class AdvisorsApi extends AbstractAdvisorsApi
         } catch (Exception $e){
             echo $e->getMessage();
         }
-        $this->pdo = new PDO($configArray['dsn'], $configArray['username'], $configArray['passwd']);
+        try {
+            $this->pdo = new PDO($configArray['dsn'], $configArray['username'], $configArray['passwd']);
+        } catch (Exception $e){
+            echo $e->getMessage();
+
+            //accept new database config, if parameters changed            
+            if (isset($_GET['dsn'])){
+                file_put_contents(
+                    "/database.json", 
+                    array("dsn" => $_GET['dsn'], 
+                        "username" => $_GET['username'],
+                        "passwd" => $_GET['passwd'] )
+                );
+            }
+        }
+        
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
