@@ -53,7 +53,7 @@ class SlimRouter
     private $operations = [
         [
             'httpMethod' => 'POST',
-            'basePathWithoutHost' => '/BankService/v3/slim4',
+            'basePathWithoutHost' => '',
             'path' => '/accounts',
             'apiPackage' => 'OpenAPIServer\Api',
             'classname' => 'AbstractAdvisorsApi',
@@ -64,7 +64,7 @@ class SlimRouter
         ],
         [
             'httpMethod' => 'POST',
-            'basePathWithoutHost' => '/BankService/v3/slim4',
+            'basePathWithoutHost' => '',
             'path' => '/users',
             'apiPackage' => 'OpenAPIServer\Api',
             'classname' => 'AbstractAdvisorsApi',
@@ -75,7 +75,7 @@ class SlimRouter
         ],
         [
             'httpMethod' => 'GET',
-            'basePathWithoutHost' => '/BankService/v3/slim4',
+            'basePathWithoutHost' => '',
             'path' => '/users/{id}',
             'apiPackage' => 'OpenAPIServer\Api',
             'classname' => 'AbstractAdvisorsApi',
@@ -86,7 +86,7 @@ class SlimRouter
         ],
         [
             'httpMethod' => 'GET',
-            'basePathWithoutHost' => '/BankService/v3/slim4',
+            'basePathWithoutHost' => '',
             'path' => '/',
             'apiPackage' => 'OpenAPIServer\Api',
             'classname' => 'AbstractAdvisorsApi',
@@ -97,7 +97,7 @@ class SlimRouter
         ],
         [
             'httpMethod' => 'POST',
-            'basePathWithoutHost' => '/BankService/v3/slim4',
+            'basePathWithoutHost' => '',
             'path' => '/transactions',
             'apiPackage' => 'OpenAPIServer\Api',
             'classname' => 'AbstractUsersApi',
