@@ -67,14 +67,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
             return $response->withStatus(200);        
         }
     }
-
-    public function newTransaction($request, $response, $args)
-    {
-        $response->getBody()->write("not implemented yet");
-        return $response->withStatus(200);        
-    }
-
-
+    
     public function insertJsonFromApiIntoDatabase($table, $bodyObject, $response){
         
         $json = json_encode($bodyObject);
