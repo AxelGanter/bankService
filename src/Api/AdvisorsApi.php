@@ -52,7 +52,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
 
     public function renderHome($request, $response, $args)
     {
-        $message = "Herzlich Willkommen";
+        $message = "<h1>Herzlich Willkommen</h1><a href=\"https://app.swaggerhub.com/apis-docs/AxelGanter/BankService/1.1#/advisors/getUser\">zur API-Dokumentation</a>";
         $response->getBody()->write($message);
         return $response->withStatus(200);
     }
