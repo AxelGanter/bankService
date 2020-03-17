@@ -45,7 +45,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
     public function newUser($request, $response, $args)
     {
         $bodyObject = $request->getParsedBody();
-        if (!insertJsonFromApiIntoDatabase('user', $bodyObject, $response)){
+        if (!$this->insertJsonFromApiIntoDatabase('user', $bodyObject, $response)){
             return $response->withStatus(400);        
         }else{
             return $response->withStatus(200);        
