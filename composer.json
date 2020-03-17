@@ -1,5 +1,5 @@
 {
-  "minimum-stability": "RC",
+  "minimum-stability": "stable",
   "repositories": [
     {
       "type": "vcs",
