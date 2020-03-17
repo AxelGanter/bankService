@@ -10,12 +10,9 @@ class AdvisorsApi extends AbstractAdvisorsApi
     private $pdo;
 
     public function __construct(){
-        // $this->pdo = new PDO('mysql:host=localhost;dbname=bankservice', 'root', '');
-        // $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-        // changes for heroku
-        $dbopts = parse_url(getenv('DATABASE_URL'));
-        echo json_encode($dbopts);
+        //$this->pdo = new PDO('mysql:host=localhost;dbname=bankservice', 'root', '');
+        $this->pdo = new PDO('mysql:host=eu-cdbr-west-02.cleardb.net;dbname=heroku_d734bf1cfc87dcd', 'b96f4909458636', 'd5e3673f');
+        $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function getUser($request, $response, $args)
