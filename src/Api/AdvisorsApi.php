@@ -11,8 +11,10 @@ class AdvisorsApi extends AbstractAdvisorsApi
 
     public function __construct(){
         //$this->pdo = new PDO('mysql:host=localhost;dbname=bankservice', 'root', '');
-        try{
+        try {
             $configArray = json_decode(file_get_contents("/database.json", true));
+        } catch (Exception $e){
+            echo $e->getMessage();
         }
         $this->pdo = new PDO($configArray['dsn'], $configArray['username'], $configArray['passwd']);
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
