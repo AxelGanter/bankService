@@ -23,9 +23,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
 
         $sql = "SELECT * FROM `user` WHERE id = :id";
         try {
-            $pdo = new PDO('mysql:host=localhost;dbname=bankservice', 'root', '');
-            $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $stmt = $pdo->prepare($sql);
+            $stmt = $this->pdo->prepare($sql);
             $stmt->execute(array("id" => $id));
         } catch (PDOException $e) {
             //Do your error handling here
