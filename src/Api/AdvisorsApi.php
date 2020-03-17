@@ -15,7 +15,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
 
         // changes for heroku
         $dbopts = parse_url(getenv('DATABASE_URL'));
-        echo $dbopts;
+        echo json_encode($dbopts);
     }
 
     public function getUser($request, $response, $args)
