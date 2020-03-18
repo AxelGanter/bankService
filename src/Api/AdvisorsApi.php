@@ -11,19 +11,17 @@ class AdvisorsApi extends AbstractAdvisorsApi
 
     public function __construct(){
         //$this->pdo = new PDO('mysql:host=localhost;dbname=bankservice', 'root', '');
-
-        $configArray = json_decode(file_get_contents("database.json"), true);
-        file_put_contents("database_check.json", json_encode($configArray));
-        $this->pdo = new PDO($configArray['dsn'], $configArray['username'], $configArray['passwd']);
-               
+        // $configArray = json_decode(file_get_contents("database.json"), true);
+        // file_put_contents("database_check.json", json_encode($configArray));
+        // $this->pdo = new PDO($configArray['dsn'], $configArray['username'], $configArray['passwd']);
+        $this->pdo = new PDO($_ENV["DSN"], $_ENV["SQL_USERNAME"], $_ENV["SQL_PASSWD"]);               
         $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     }
 
     public function getUser($request, $response, $args)
     {
         $id = $args['id'];
-        $message = "id = " . $id;
-        
+        $message = "id = " . $id;        
 
         $sql = "SELECT * FROM `user` WHERE id = :id";
         try {
@@ -101,7 +99,6 @@ class AdvisorsApi extends AbstractAdvisorsApi
         }
         return true;
     }
-
 }
 
 // Class | Method | HTTP request | Description
