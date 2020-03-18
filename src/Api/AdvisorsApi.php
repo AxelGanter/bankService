@@ -48,7 +48,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
         if (!$this->insertJsonFromApiIntoDatabase('user', $bodyObject, $response)){
             return $response->withStatus(400);        
         }else{
-            return $response->withStatus(200);        
+            return $response->withStatus(201);        
         }
     }
 
@@ -72,7 +72,7 @@ class AdvisorsApi extends AbstractAdvisorsApi
         if (!$this->insertJsonFromApiIntoDatabase('account', $bodyObject, $response)){
             return $response->withStatus(400);        
         }else{
-            return $response->withStatus(200);        
+            return $response->withStatus(201);        
         }
     }
     
